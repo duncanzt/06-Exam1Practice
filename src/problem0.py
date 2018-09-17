@@ -234,8 +234,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
-    #          Tests have been written for you (above).
+    #DONE   Tests have been written for you (above).
     #
     ####################################################################
     # IMPORTANT:

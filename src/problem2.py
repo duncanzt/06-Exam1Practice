@@ -2,8 +2,8 @@
 PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Zachary Duncan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -110,6 +110,17 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    line = rg.Line(rectangle.get_upper_left_corner(), rectangle.get_lower_right_corner())
+    line.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color
+    window.render()
+
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
@@ -181,6 +192,21 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+    for k in range(n):
+        rect.attach_to(win)
+
+        x1 = rect.get_upper_left_corner().x - (k+1)*delta
+        y1 = rect.get_upper_left_corner().y - (k+1)*delta
+        x2 = rect.get_lower_right_corner().x + (k+1)*delta
+        y2 = rect.get_lower_right_corner().y + (k+1)*delta
+
+        topcorner = rg.Point(x1,y1)
+        bottomcorner = rg.Point(x2,y2)
+
+        r = rg.Rectangle(topcorner, bottomcorner)
+
+        r.attach_to(win)
+        win.render()
 
 
 # ----------------------------------------------------------------------
